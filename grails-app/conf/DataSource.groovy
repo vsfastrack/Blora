@@ -15,7 +15,7 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-update"
+            dbCreate = "none"
             url = "jdbc:mysql://localhost:3306/Quora?autoreconnect=true"
             username = "admin"
             password = "quora"
@@ -23,7 +23,7 @@ environments {
     }
     test {
         dataSource {
-            dbCreate = "update"
+            dbCreate = "create-drop"
             url = "jdbc:mysql://localhost:3306/Quora?autoreconnect=true"
             username = "admin"
             password = "quora"

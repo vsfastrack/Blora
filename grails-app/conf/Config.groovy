@@ -62,6 +62,16 @@ grails {
             //'text/html' = 'html'
         }
     }
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "vebsrocks6693@gmail.com"
+        password = "vebs8384882725"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
 }
  
 grails.converters.encoding = "UTF-8"
@@ -119,6 +129,11 @@ log4j = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.Quora.entity.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.Quora.entity.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.Quora.entity.Role'
+grails.plugins.springsecurity.password.algorithm='SHA-256'
+grails.plugin.springsecurity.password.hash.iterations = 1
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/home'
+grails.plugin.springsecurity.ui.forgotPassword.postResetUrl = '/reset'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -129,4 +144,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
 ]
+grails.plugin.databasemigration.changelogFileName = 'changelog.xml'
 

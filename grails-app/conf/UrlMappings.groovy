@@ -1,3 +1,5 @@
+import com.quora.profile.TopicController
+
 class UrlMappings {
 
 	static mappings = {
@@ -8,6 +10,9 @@ class UrlMappings {
         }
 
         "/"(view:"/index")
+        "/register"(controller: "registration" , action: "register")
+        "/addtopic"(controller: "topic" ,action: "createTopic")
+        "/resetPassword"(controller: "profile" , action: "resetPassword")
         "500"(view:'/error')
 	}
 }
